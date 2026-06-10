@@ -1,7 +1,7 @@
 ```markdown
 # 🏠 Smart Home Energy Monitoring System
 
-[cite_start]An industry-oriented, full-stack IoT portfolio project that provides real-time visibility into domestic and commercial electrical consumption[cite: 11, 27, 298]. [cite_start]This system combines a high-performance **Python (FastAPI) back-end telemetry engine** with an interactive **React (Vite + Tailwind CSS + Recharts) dashboard** to measure, calculate, log, and visualize electrical consumption metrics dynamically [cite: 4, 183-190, 226].
+An industry-oriented, full-stack IoT portfolio project that provides real-time visibility into domestic and commercial electrical consumption[cite: 11, 27, 298]. [cite_start]This system combines a high-performance **Python (FastAPI) back-end telemetry engine** with an interactive **React (Vite + Tailwind CSS + Recharts) dashboard** to measure, calculate, log, and visualize electrical consumption metrics dynamically [cite: 4, 183-190, 226].
 
 ---
 
@@ -21,10 +21,10 @@
 ## 1. 🎯 Overview & Problem Statement
 
 ### The Problem
-[cite_start]Modern households, hostels, and small facilities lack real-time visibility into where their electrical utility spending goes[cite: 298]. [cite_start]Hidden "phantom/standby loads" (appliances consuming power even when idle) and unmonitored heavy machinery cause significant energy waste and inflated utility bills[cite: 467, 521]. [cite_start]Traditional utility meters only provide a retrospective monthly bill, making it impossible to diagnose consumption anomalies proactively[cite: 433, 521].
+Modern households, hostels, and small facilities lack real-time visibility into where their electrical utility spending goes[cite: 298]. [cite_start]Hidden "phantom/standby loads" (appliances consuming power even when idle) and unmonitored heavy machinery cause significant energy waste and inflated utility bills[cite: 467, 521]. [cite_start]Traditional utility meters only provide a retrospective monthly bill, making it impossible to diagnose consumption anomalies proactively[cite: 433, 521].
 
 ### The Solution
-[cite_start]This project implements a modular, low-cost, and non-invasive energy monitoring system[cite: 302]. [cite_start]The core computing edge reads analog data points (simulating physical hardware like an ESP32 and an ACS712 Hall-effect current sensor), applies real-time mathematical root-mean-square (RMS) tracking algorithms, detects overload thresholds, logs time-series historical data, and streams low-latency data pipelines over WebSockets directly to a responsive UI web dashboard [cite: 73, 74, 105-115, 183-190, 226, 326].
+This project implements a modular, low-cost, and non-invasive energy monitoring system[cite: 302]. [cite_start]The core computing edge reads analog data points (simulating physical hardware like an ESP32 and an ACS712 Hall-effect current sensor), applies real-time mathematical root-mean-square (RMS) tracking algorithms, detects overload thresholds, logs time-series historical data, and streams low-latency data pipelines over WebSockets directly to a responsive UI web dashboard [cite: 73, 74, 105-115, 183-190, 226, 326].
 
 ---
 
@@ -61,12 +61,10 @@ This project supports dual-mode implementation tracks: hardware deployment for p
 ### 💻 Software Architecture
 
 * **Backend Framework:** `FastAPI` (Python) - Handles concurrent execution loops and low-overhead HTTP REST endpoints.
-* 
-**Data Pipeline:** `WebSockets` - Full-duplex protocol streaming updates directly to clients at 1 Hz intervals .
+* **Data Pipeline:** `WebSockets` - Full-duplex protocol streaming updates directly to clients at 1 Hz intervals .
 
 
-* 
-**Database Tier:** Local `CSV` time-series ingestion engine modeling sequential telemetry updates.
+* **Database Tier:** Local `CSV` time-series ingestion engine modeling sequential telemetry updates.
 
 
 * **Frontend Library:** `React.js` (with Vite bundling engine for sub-millisecond hot module reloading).
@@ -77,16 +75,13 @@ This project supports dual-mode implementation tracks: hardware deployment for p
 
 If deploying onto bare metal, the application maps perfectly to the following hardware specifications:
 
-* 
-**Microcontroller:** `ESP32-DevKitC` (Built-in 2.4GHz Wi-Fi and multiple analog-to-digital converter channels).
+* **Microcontroller:** `ESP32-DevKitC` (Built-in 2.4GHz Wi-Fi and multiple analog-to-digital converter channels).
 
 
-* 
-**Current Sensing:** `ACS712` (Hall-effect 20A/30A sensor) or `SCT-013-050` non-invasive split-core CT clamp.
+* **Current Sensing:** `ACS712` (Hall-effect 20A/30A sensor) or `SCT-013-050` non-invasive split-core CT clamp.
 
 
-* 
-**Voltage Sensing:** `ZMPT101B` AC Voltage transformer module or `PZEM-004T v3` true-power UART module.
+* **Voltage Sensing:** `ZMPT101B` AC Voltage transformer module or `PZEM-004T v3` true-power UART module.
 
 
 
@@ -115,31 +110,25 @@ The technical workflow isolates data sourcing from data rendering, simulating re
 
 ## 5. ✨ Key Features
 
-* 
-**Real-Time Data Streaming:** Full-duplex WebSocket connection updating critical parameters every 1 second without browser polling overhead .
+* **Real-Time Data Streaming:** Full-duplex WebSocket connection updating critical parameters every 1 second without browser polling overhead .
 
 
-* 
-**Precise Mathematical Analytics Engine:** Computes electrical parameters in real time :
+* **Precise Mathematical Analytics Engine:** Computes electrical parameters in real time :
 
 
-* 
-*Active Power Calculation:* $Power (W) = Voltage (V) \times Current (A)$ 
+* *Active Power Calculation:* $Power (W) = Voltage (V) \times Current (A)$ 
 
 
-* 
-*Cumulative Energy Accrual:* $Energy (kWh) = \sum \left(\frac{Power (kW) \times \Delta t (s)}{3600}\right)$ 
+* *Cumulative Energy Accrual:* $Energy (kWh) = \sum \left(\frac{Power (kW) \times \Delta t (s)}{3600}\right)$ 
 
 
 * *Dynamic Cost Scaling:* $Cost = Energy (kWh) \times Base Tariff Rate$
 
 
-* 
-**Intelligent Breaker Alert System:** Monitors active consumption and triggers immediate warning indicators if current draw exceeds a safe power threshold.
+* **Intelligent Breaker Alert System:** Monitors active consumption and triggers immediate warning indicators if current draw exceeds a safe power threshold.
 
 
-* 
-**Time-Series Data Ingestion:** Automates file-append processes to log runtime data parameters into local persistent CSV sheets for historical audits.
+* **Time-Series Data Ingestion:** Automates file-append processes to log runtime data parameters into local persistent CSV sheets for historical audits.
 
 
 
@@ -242,20 +231,16 @@ Timestamp,Voltage_V,Current_A,Power_W,Energy_kWh,Cost,Alert_Status
 
 ## 8. 🔮 Future Improvements
 
-* 
-**Multi-Circuit Core Scaling:** Add an external `ADS1115` 16-bit high-resolution I2C ADC converter to track 4 isolated current clamp wire nodes simultaneously .
+* **Multi-Circuit Core Scaling:** Add an external `ADS1115` 16-bit high-resolution I2C ADC converter to track 4 isolated current clamp wire nodes simultaneously .
 
 
-* 
-**True Power Factor Integration:** Transition calculations from apparent volt-amperes to true active power metrics using dedicated hardware couplers like the `PZEM-004T` module .
+*  **True Power Factor Integration:** Transition calculations from apparent volt-amperes to true active power metrics using dedicated hardware couplers like the `PZEM-004T` module .
 
 
-* 
-**Industrial IoT Broker Ingestion:** Integrate a dedicated local `Eclipse Mosquitto` MQTT publisher container with a structured `InfluxDB` time-series engine.
+* **Industrial IoT Broker Ingestion:** Integrate a dedicated local `Eclipse Mosquitto` MQTT publisher container with a structured `InfluxDB` time-series engine.
 
 
-* 
-**Predictive AI Load Analytics:** Apply local machine learning models (such as Linear Regression or LSTM) to predict future energy costs based on historical consumption trends.
+* **Predictive AI Load Analytics:** Apply local machine learning models (such as Linear Regression or LSTM) to predict future energy costs based on historical consumption trends.
 
 
 
@@ -266,8 +251,7 @@ Timestamp,Voltage_V,Current_A,Power_W,Energy_kWh,Cost,Alert_Status
 * **Full-Stack Pipeline Integration:** Mastered linking a fast-executing asynchronous Python backend service directly to a dynamic, visual React user interface framework.
 * **Low-Latency Stream Architecture:** Avoided typical server-polling overhead bottlenecks by building standard full-duplex WebSocket connections for immediate UI data refreshes.
 * **Mathematical Telemetry Tracking:** Learned how to transform raw, noisy analog signals into accurate physical electricity metrics using discrete accumulation integration principles over time.
-* 
-**Production Code Governance:** Gained practical experience in setting up defensive code routines, configuring precise `.gitignore` files, and structuring real-time web services to mimic industrial SCADA platforms.
+* **Production Code Governance:** Gained practical experience in setting up defensive code routines, configuring precise `.gitignore` files, and structuring real-time web services to mimic industrial SCADA platforms.
 
 
 
